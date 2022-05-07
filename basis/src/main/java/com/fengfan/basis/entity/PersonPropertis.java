@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
  * @date 2022/5/6 15:53
  */
 @Component
-@PropertySource(value = "classpath:application-persion.properties", ignoreResourceNotFound = true, encoding = "utf-8")
+@PropertySource(value = "classpath:config/persion.properties", ignoreResourceNotFound = true, encoding = "utf-8")
 public class PersonPropertis {
 
     @Value("${persion.name}")

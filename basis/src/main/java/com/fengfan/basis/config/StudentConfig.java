@@ -12,7 +12,7 @@ import org.springframework.context.annotation.PropertySource;
  * @date 2022/5/6 16:49
  */
 @Configuration
-@PropertySource(value = "classpath:application-student.properties", ignoreResourceNotFound = true, encoding = "utf-8")
+@PropertySource(value = "classpath:config/student.properties", ignoreResourceNotFound = true, encoding = "utf-8")
 public class StudentConfig {
 
     @Bean
