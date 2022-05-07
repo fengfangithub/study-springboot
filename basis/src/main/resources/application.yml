@@ -1,0 +1,12 @@
+#服务端口
+server:
+  port: 8080
+  servlet:
+    context-path: /basis
+
+#服务名称
+spring:
+  application:
+    name: basis
+  profiles:
+    active: dev
