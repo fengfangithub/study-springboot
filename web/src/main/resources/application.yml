@@ -2,7 +2,7 @@
 server:
   port: 8080
   servlet:
-    context-path: /basis
+    context-path: /web
 
 #配置数据库
 spring:
@@ -15,4 +15,4 @@ spring:
 #配置mybatis mapper路径和实体别名
 mybatis:
   mapper-locations: classpath*:mapper/*.xml
-  type-aliases-package: cn.fengfan.dao.entity
+  type-aliases-package: com.fengfan.web.entity

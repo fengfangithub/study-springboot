@@ -1,9 +1,11 @@
 package com.fengfan.web;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
+@MapperScan("com.fengfan.web.dao")
 public class WebApplication {
 
     public static void main(String[] args) {
