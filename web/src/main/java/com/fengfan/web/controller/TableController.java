@@ -31,7 +31,8 @@ public class TableController {
         List<Table> tables = new ArrayList<>();
         Table table = new Table();
         table.setId(1);
-        table.setName("Gson配置");
+//        table.setName("Gson配置");
+        table.setName("fastJson配置");
         table.setTime(new Date());
         tables.add(table);
         return tables;
