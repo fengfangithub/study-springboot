@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -26,6 +28,12 @@ public class TableController {
      */
     @PostMapping("/queryAll")
     public List<Table> queryAll() {
-        return tableDao.queryAll(new Table());
+        List<Table> tables = new ArrayList<>();
+        Table table = new Table();
+        table.setId(1);
+        table.setName("Gson配置");
+        table.setTime(new Date());
+        tables.add(table);
+        return tables;
     }
 }
