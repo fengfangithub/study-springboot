@@ -6,4 +6,8 @@
         select id, name, time from table1
     </select>
 
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into table1(id, name, time) values (#{id,jdbcType=NUMERIC}, #{name,jdbcType=VARCHAR}, #{time,jdbcType=TIMESTAMP})
+    </insert>
+
 </mapper>

@@ -9,7 +9,6 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 import javax.annotation.Resource;
-
 import java.nio.charset.StandardCharsets;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -26,7 +25,7 @@ public class TableControllerTest {
     private MockMvc mockMvc;
 
     @BeforeEach
-    public void init(){
+    public void init() {
         //初始化MockMvc对象
         mockMvc = MockMvcBuilders.webAppContextSetup(wac).build();
     }
@@ -34,6 +33,14 @@ public class TableControllerTest {
     @Test
     public void queryAll() throws Exception {
         String str = mockMvc.perform(MockMvcRequestBuilders.post("/queryAll"))
+                .andExpect(status().isOk())
+                .andReturn().getResponse().getContentAsString(StandardCharsets.UTF_8);
+        System.out.println(str);
+    }
+
+    @Test
+    public void controllerAdviceTest() throws Exception {
+        String str = mockMvc.perform(MockMvcRequestBuilders.get("/testControllerAdvice"))
                 .andExpect(status().isOk())
                 .andReturn().getResponse().getContentAsString(StandardCharsets.UTF_8);
         System.out.println(str);

@@ -20,4 +20,13 @@ public interface TableDao {
      */
     List<Table> queryAll(Table table);
 
+    /**
+     * @param table
+     * @return int
+     * @description 插入
+     * @author fengfan
+     * @date 2022/5/11 16:19
+     */
+    int insert(Table table);
+
 }

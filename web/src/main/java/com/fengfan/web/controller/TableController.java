@@ -2,6 +2,7 @@ package com.fengfan.web.controller;
 
 import com.fengfan.web.dao.TableDao;
 import com.fengfan.web.entity.Table;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -36,5 +37,16 @@ public class TableController {
         table.setTime(new Date());
         tables.add(table);
         return tables;
+    }
+
+    @GetMapping("/testControllerAdvice")
+    public Table controllerAdviceTest(){
+        Table table = new Table();
+//        table.setId(1);
+        table.setName("全局异常配置");
+//        table.setTime(new Date());
+//        int a = 1/0;
+        tableDao.insert(table);
+        return table;
     }
 }
