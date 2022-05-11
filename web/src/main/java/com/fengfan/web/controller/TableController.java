@@ -42,11 +42,10 @@ public class TableController {
     @GetMapping("/testControllerAdvice")
     public Table controllerAdviceTest(){
         Table table = new Table();
-//        table.setId(1);
-        table.setName("全局异常配置");
-//        table.setTime(new Date());
-//        int a = 1/0;
-        tableDao.insert(table);
+        table.setId(1);
+        table.setName("HandlerExceptionResolver全局异常配置");
+        table.setTime(new Date());
+        int a = 1/0;
         return table;
     }
 }
