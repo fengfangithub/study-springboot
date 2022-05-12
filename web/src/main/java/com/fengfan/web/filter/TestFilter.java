@@ -14,7 +14,7 @@ public class TestFilter implements Filter {
 
     @Override
     public void init(FilterConfig filterConfig) {
-        System.out.println("init");
+//        System.out.println("init");
     }
 
     @Override

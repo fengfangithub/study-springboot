@@ -20,12 +20,12 @@ public class WebMvcConfig implements WebMvcConfigurer {
      *
      * @param registry
      */
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new InterceptorTest())
-                .addPathPatterns("/**")
-                .excludePathPatterns("/query");
-    }
+//    @Override
+//    public void addInterceptors(InterceptorRegistry registry) {
+//        registry.addInterceptor(new InterceptorTest())
+//                .addPathPatterns("/**")
+//                .excludePathPatterns("/query");
+//    }
 
     /**
      * 静态资源过滤配置
