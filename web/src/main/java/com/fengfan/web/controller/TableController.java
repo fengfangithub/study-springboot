@@ -2,12 +2,12 @@ package com.fengfan.web.controller;
 
 import com.fengfan.web.dao.TableDao;
 import com.fengfan.web.entity.Table;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -28,29 +28,23 @@ public class TableController {
      * @date 2022/5/10 14:23
      */
     @PostMapping("/queryAll")
+    @CrossOrigin(value = "http://localhost:8080", maxAge = 1800, allowedHeaders = "*")
     public List<Table> queryAll() {
-        List<Table> tables = new ArrayList<>();
-        Table table = new Table();
-        table.setId(1);
-//        table.setName("Gson配置");
-        table.setName("fastJson配置");
-        table.setTime(new Date());
-        tables.add(table);
-        return tables;
+        return tableDao.queryAll(new Table());
     }
 
     @GetMapping("/testControllerAdvice")
-    public Table controllerAdviceTest(){
+    public Table controllerAdviceTest() {
         Table table = new Table();
         table.setId(1);
         table.setName("HandlerExceptionResolver全局异常配置");
         table.setTime(new Date());
-        int a = 1/0;
+        int a = 1 / 0;
         return table;
     }
 
     @GetMapping("/testBasicErrorController")
-    public Table basicErrorControllerTest(){
+    public Table basicErrorControllerTest() {
         Table table = new Table();
         table.setId(1);
         table.setName("BasicErrorController异常配置");
