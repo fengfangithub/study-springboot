@@ -2,6 +2,7 @@ package com.fengfan.web.config;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
+import java.io.IOException;
 
 /**
  * @author fengfan
@@ -9,7 +10,7 @@ import javax.servlet.annotation.WebFilter;
  * @date 2022/5/11 17:20
  */
 
-//@WebFilter("/*")
+@WebFilter("/*")
 public class TestFilter implements Filter {
 
     @Override
@@ -18,8 +19,10 @@ public class TestFilter implements Filter {
     }
 
     @Override
-    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) {
+    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         System.out.println("doFilter");
+        throw new RuntimeException("我是拦截器抛出的异常，测试BasicErrorController的作用");
+        // filterChain.doFilter(servletRequest, servletResponse);
     }
 
     @Override

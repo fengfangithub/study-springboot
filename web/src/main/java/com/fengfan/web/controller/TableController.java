@@ -48,4 +48,13 @@ public class TableController {
         int a = 1/0;
         return table;
     }
+
+    @GetMapping("/testBasicErrorController")
+    public Table basicErrorControllerTest(){
+        Table table = new Table();
+        table.setId(1);
+        table.setName("BasicErrorController异常配置");
+        table.setTime(new Date());
+        return table;
+    }
 }
