@@ -1,5 +1,6 @@
-package com.fengfan.web.config;
+package com.fengfan.web.exception;
 
+import com.fengfan.web.entity.WebResponse;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 

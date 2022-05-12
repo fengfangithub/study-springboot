@@ -1,24 +1,33 @@
-//package com.fengfan.web.config;
-//
-//import com.alibaba.fastjson.serializer.SerializerFeature;
-//import com.alibaba.fastjson.support.config.FastJsonConfig;
-//import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
-//import org.springframework.context.annotation.Configuration;
-//import org.springframework.http.MediaType;
-//import org.springframework.http.converter.HttpMessageConverter;
-//import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-//
-//import java.util.ArrayList;
-//import java.util.List;
-//
-///**
-// * @author fengfan
-// * @description fastJson配置
-// * @date 2022/5/11 10:34
-// */
-//@Configuration
-//public class MvcFastJsonConfigurer implements WebMvcConfigurer {
-//
+package com.fengfan.web.config;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+/**
+ * @author fengfan
+ * @description 拦截器配置
+ * @date 2022/5/12 15:00
+ */
+@Configuration
+public class WebMvcConfig implements WebMvcConfigurer {
+
+    /**
+     * 静态资源过滤配置
+     *
+     * @param registry
+     */
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
+    }
+
+    /**
+     * fastJson配置
+     *
+     * @param converters
+     */
 //    @Override
 //    public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
 //        //创建fastJson消息转换器
@@ -53,4 +62,19 @@
 //        fastConverter.setFastJsonConfig(config);
 //        converters.add(fastConverter);
 //    }
-//}
+
+    /**
+     * 跨域配置
+     *
+     * @param registry
+     */
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/web/**")
+                .allowedHeaders("*")
+                .allowedMethods("*")
+                .maxAge(1800)
+                .allowedOrigins("http://localhost:8080");
+    }
+
+}

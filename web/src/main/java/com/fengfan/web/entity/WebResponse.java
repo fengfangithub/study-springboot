@@ -1,4 +1,4 @@
-package com.fengfan.web.config;
+package com.fengfan.web.entity;
 
 import lombok.Data;
 

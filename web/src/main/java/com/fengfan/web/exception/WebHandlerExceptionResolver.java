@@ -1,5 +1,6 @@
-//package com.fengfan.web.config;
+//package com.fengfan.web.exception;
 //
+//import com.fengfan.web.entity.WebResponse;
 //import org.springframework.web.servlet.ModelAndView;
 //import org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver;
 //import org.springframework.web.servlet.view.json.MappingJackson2JsonView;

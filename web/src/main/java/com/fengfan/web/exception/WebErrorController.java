@@ -1,5 +1,6 @@
-package com.fengfan.web.config;
+package com.fengfan.web.exception;
 
+import com.fengfan.web.entity.WebResponse;
 import org.springframework.boot.autoconfigure.web.ErrorProperties;
 import org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController;
 import org.springframework.boot.web.error.ErrorAttributeOptions;

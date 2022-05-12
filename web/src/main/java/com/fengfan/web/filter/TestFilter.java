@@ -1,4 +1,4 @@
-package com.fengfan.web.config;
+package com.fengfan.web.filter;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
@@ -9,7 +9,6 @@ import java.io.IOException;
  * @description 测试filter的异常
  * @date 2022/5/11 17:20
  */
-
 @WebFilter("/*")
 public class TestFilter implements Filter {
 
@@ -21,13 +20,12 @@ public class TestFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         System.out.println("doFilter");
-        throw new RuntimeException("我是拦截器抛出的异常，测试BasicErrorController的作用");
-        // filterChain.doFilter(servletRequest, servletResponse);
+//        throw new RuntimeException("我是Filter抛出的异常，测试BasicErrorController的作用");
+        filterChain.doFilter(servletRequest, servletResponse);
     }
 
     @Override
     public void destroy() {
 
     }
-
 }
