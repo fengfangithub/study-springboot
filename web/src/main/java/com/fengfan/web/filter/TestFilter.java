@@ -14,12 +14,12 @@ public class TestFilter implements Filter {
 
     @Override
     public void init(FilterConfig filterConfig) {
-//        System.out.println("init");
+
     }
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        System.out.println("doFilter");
+        System.out.println("Filterr-------测试Filter的使用");
 //        throw new RuntimeException("我是Filter抛出的异常，测试BasicErrorController的作用");
         filterChain.doFilter(servletRequest, servletResponse);
     }

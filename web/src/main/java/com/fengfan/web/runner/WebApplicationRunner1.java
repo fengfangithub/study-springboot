@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component;
  * @description ApplicationRunner使用
  * @date 2022/5/12 16:06
  */
-@Component
-@Order(1)
+//@Component
+//@Order(1)
 public class WebApplicationRunner1 implements ApplicationRunner {
 
     @Override

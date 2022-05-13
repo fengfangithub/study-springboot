@@ -1,5 +1,7 @@
 package com.fengfan.web.config;
 
+import com.fengfan.web.exception.WebHandlerExceptionResolver;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -16,9 +18,9 @@ public class WebBeanConfig {
      * @return
      */
 //    @Bean
-//    public WebHandlerExceptionResolver webHandlerExceptionResolver() {
-//        return new WebHandlerExceptionResolver();
-//    }
+    public WebHandlerExceptionResolver webHandlerExceptionResolver() {
+        return new WebHandlerExceptionResolver();
+    }
 
     /**
      * Gson配置

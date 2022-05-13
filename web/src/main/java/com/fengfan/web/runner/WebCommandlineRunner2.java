@@ -11,8 +11,8 @@ import java.util.Arrays;
  * @description Runner使用
  * @date 2022/5/12 15:57
  */
-@Component
-@Order(1)
+//@Component
+//@Order(1)
 public class WebCommandlineRunner2 implements CommandLineRunner {
 
     @Override
