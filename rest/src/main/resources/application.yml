@@ -14,3 +14,7 @@ spring:
       ddl-auto: none
     database: mysql
     show-sql: true
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
